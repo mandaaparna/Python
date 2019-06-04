@@ -1,14 +1,23 @@
 import random
 str1 = input("Please enter the input string")
-del_char1_ind = random.randint(0, len(str1)-1)
-str1 = str1.replace(str1[del_char1_ind], '')
-del_char2_ind = random.randint(0, len(str1)-1)
-str1 = str1.replace(str1[del_char2_ind], '')
+str2 = input("Please enter the characters that are to be deleted with delimiter as space")
+str2 = str2.split(' ')
+for i in str2:
+    str1 = str1.replace(i, '')
 str1 = str1[::-1]
 print(str1)
 
-x = int(input("Enter first number:"))
-y = int(input("Enter second number:"))
+j=1
+while(j):
+    try:
+        x = int(input("Enter first number:"))
+        y = int(input("Enter second number:"))
+        j=0;
+    except ValueError:
+        print('Non-numeric data found in the file.')
+
+
+
 print("Adiition is:" , x+y)
 print("Subtraction is:", x-y)
 print("multiplication is:", x*y)
